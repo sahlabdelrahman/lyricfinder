@@ -50,9 +50,11 @@ const Lyrics = props => {
             {track.track.track_name} by{" "}
             <span className="text-secondary">{track.track.artist_name}</span>
           </h5>
-          <div className="card-body">
-            <p className="card-text">{lyrics.lyrics.lyrics_body}</p>
-          </div>
+          <div className='card-body'>
+              {lyrics.lyrics_body.split("\n").map(lyric => {
+                  return <p className="card-text" key={Math.random()}>{lyric}</p>
+               })}
+           </div>
         </div>
 
         <ul className="list-group mt-3">
